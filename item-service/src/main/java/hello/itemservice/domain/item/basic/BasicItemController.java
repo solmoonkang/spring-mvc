@@ -52,10 +52,17 @@ public class BasicItemController {
         return "basic/item";
     }
 
-    @PostMapping("/add")
     public String addItemV2(@ModelAttribute("item") Item item) {
         itemRepository.save(item);
         // model.addAttribute("item", item);    // 자동 추가, 생략 가능
+
+        return "basic/item";
+    }
+
+    @PostMapping("/add")
+    public String addItemV3(@ModelAttribute Item item) {    // Item -> "item"으로 변환
+        itemRepository.save(item);
+        // model.addAttribute("item", item);    // 매개변수의 클래스명의 앞글자를 소문자로 만들어서 지정
 
         return "basic/item";
     }
