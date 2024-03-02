@@ -49,7 +49,7 @@ public class RequestParamController {
             @RequestParam String username,
             @RequestParam int age) {
         log.info("username={}, age={}", username, age);
-        return "ok";
+        return "OK";
     }
 
     /**
@@ -60,7 +60,7 @@ public class RequestParamController {
     @RequestMapping("/request-param-v4")
     public String requestParamV4(String username, int age) {
         log.info("username={}, age={}", username, age);
-        return "ok";
+        return "OK";
     }
 
     @ResponseBody
@@ -69,7 +69,7 @@ public class RequestParamController {
             @RequestParam(required = false) String username,
             @RequestParam(required = false) Integer age) {
         log.info("username={}, age={}", username, age);
-        return "ok";
+        return "OK";
     }
 
     @ResponseBody
@@ -78,13 +78,13 @@ public class RequestParamController {
             @RequestParam(required = true, defaultValue = "guest") String username,
             @RequestParam(required = false, defaultValue = "-1") int age) {
         log.info("username={}, age={}", username, age);
-        return "ok";
+        return "OK";
     }
 
     @ResponseBody
     @RequestMapping("/request-param-map")
     public String requestParamMap(@RequestParam Map<String, Object> paramMap) {
         log.info("username={}, age={}", paramMap.get("username"), paramMap.get("age"));
-        return "ok";
+        return "OK";
     }
 }
